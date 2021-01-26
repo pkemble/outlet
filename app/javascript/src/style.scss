@@ -1,0 +1,59 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+	background: grey;	
+}
+
+/* NOTEBOOKS */
+.notebook {
+	background: white;
+}
+
+.notebook .notebook-title {
+	size: 6em;
+	background: pink;
+	border: 1px solid black;
+}
+
+.notebook .notebook-description {
+	size: 5em;
+}
+
+.notebook .act {
+	border: 1px solid black;
+}
+
+/* POSTS */
+.post {
+	background: white;
+	text-decoration: none;
+	color: black;
+	line-height: 2;
+}
+
+.post, a, a:hover{
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.post .pub-date {
+	text-align: right;
+	background: #fc6;
+}
+
+.post .post-title {
+	text-align: left;
+	background: #0cf
+}
+
+.post .enclosure {
+	text-align: left;
+	background: #0f9;
+}
+
+textarea {
+	width: 600px;
+	height: 300px;
+}
+
+/* HEADER */
