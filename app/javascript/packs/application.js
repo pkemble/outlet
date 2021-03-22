@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "../src/style.scss";
+import "../src/actiontext.scss";
 require("jquery");
 require("bootstrap");
 require.context('../images', true)
@@ -16,3 +17,6 @@ require.context('../images', true)
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("trix")
+require("@rails/actiontext")

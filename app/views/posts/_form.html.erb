@@ -12,7 +12,7 @@
   <% end %>
 
 	<div class="dropdown">
-		<%= form.select :notebook_id, options_from_collection_for_select(@notebooks, "id", "title") %>
+		<%= form.collection_select :notebook_id, @notebooks, :id, :title %>
 	</div>
 
   <div class="field">
@@ -22,7 +22,7 @@
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.rich_text_area :content %>
   </div>
 
   <div class="actions">

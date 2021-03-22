@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
 	belongs_to :user
 	belongs_to :notebook
+	has_rich_text :content
 	
 	def sani_date
 		self.created_at.strftime('%Y-%m-%d')

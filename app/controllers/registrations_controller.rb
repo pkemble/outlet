@@ -1,7 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
+	#require 'rqrcode'
+  before_action :one_user_registered?, only: %i[new create]
 
-  before_action :one_user_registered?, only: [:new, :create]
-  
+  def edit
+		@qrcode = helpers.qrcode(current_user)
+  end
+
   protected
 
   def one_user_registered?
@@ -11,7 +15,6 @@ class RegistrationsController < Devise::RegistrationsController
       else
         redirect_to new_user_session_path
       end
-    end  
+    end
   end
-
 end

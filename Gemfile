@@ -29,10 +29,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
-gem 'active_model_otp'
+gem 'devise-two-factor', git: 'https://github.com/jason-hobbs/devise-two-factor.git', branch: 'master' # Rails 6.1 compatibility: https://github.com/tinfoil/devise-two-factor/issues/183
 gem 'rqrcode'
-
+gem 'figaro'
 gem 'rss'
+gem 'htmlentities'
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +51,9 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.3", require: false
 end
 
 group :test do

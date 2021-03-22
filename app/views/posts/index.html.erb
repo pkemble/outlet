@@ -1,7 +1,7 @@
 <% @posts.each do |post| %> <%= link_to edit_post_path(post) do %>
 	<div class='container rounded post mb-5'>
 		<div class='row'>
-			<div class='col-md-8 post-title'><%= post.post_header %></div>
+			<div class='col-md-8 post-title'><%= post.post_header.html_safe %></div>
 			<div class='col-md-4 pub-date'><%= post.sani_date %></div>
 		</div>
 		<div class='row justify-content-md-center'>
