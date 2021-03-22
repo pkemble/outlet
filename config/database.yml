@@ -27,4 +27,5 @@ test:
 production:
   <<: *default
   database: outlet
+  username: outlet
   password: <%= begin IO.read("config/.db") rescue "" end %>
