@@ -1,4 +1,4 @@
-require "capistrano/rails"
+#require "capistrano/rails"
 
 # Load DSL and set up stages
 require "capistrano/setup"
