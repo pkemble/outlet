@@ -41,3 +41,5 @@ set :keep_releases, 2
 
 # Passenger workaround 2/21/19 from logbook repo
 set :passenger_restart_with_touch, true
+
+set :assets_roles, [:web, :app]
