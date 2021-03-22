@@ -6,6 +6,7 @@ set :repo_url, "https://github.com/pkemble/outlet.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, "main"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/outlet"
@@ -21,7 +22,7 @@ set :deploy_to, "/var/www/outlet"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/.db"
+append :linked_files, %w{config/master.key config/.db}
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
