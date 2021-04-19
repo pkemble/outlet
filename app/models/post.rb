@@ -8,15 +8,15 @@ class Post < ApplicationRecord
 	end
 	
 	def notebook_title
-		Notebook.find(self.notebook_id).title
+		self.notebook.title
 	end
 	
 	def post_header
-		if self.notebook_id == 0 && !self.title.empty?
+		if self.notebook.nil? && !self.title.empty?
 			self.title
-		elsif self.notebook_id != 0 && self.title.empty?
+		elsif !self.notebook.nil? && self.title.empty?
 			self.notebook_title + ' : untitled'
-		elsif self.notebook_id == 0 && self.title.empty?
+		elsif self.notebook.nil? && self.title.empty?
 			'unassigned : untitled'
 		else
 			self.notebook_title + ' : ' + self.title
