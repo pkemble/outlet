@@ -1,6 +1,6 @@
 class NotebooksController < ApplicationController
-  before_action :set_notebook, only: %i[ show edit update destroy ]
-
+  before_action :set_notebook, only: %i[ show edit update destroy ] 
+  
   # GET /notebooks or /notebooks.json
   def index
     @notebooks = Notebook.all

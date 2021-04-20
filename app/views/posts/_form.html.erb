@@ -12,7 +12,7 @@
   <% end %>
 
 	<div class="dropdown">
-		<%= form.collection_select :notebook_id, @notebooks, :id, :title %>
+		<%= form.collection_select :notebook_id, Notebook.all, :id, :title, :prompt => true %>
 	</div>
 
   <div class="field">
@@ -23,6 +23,11 @@
   <div class="field">
   	<%= form.label :created_at %>
   	<%= form.date_field :created_at %>
+  </div>
+  
+  <div class="field">
+  	<%= form.label :enclosure %>
+  	<%= form.text_field :enclosure %>
   </div>
 
   <div class="field">

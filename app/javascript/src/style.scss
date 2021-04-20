@@ -23,6 +23,21 @@ body {
 	border: 1px solid black;
 }
 
+.nb-carousel {
+	background: white;
+	text-align: center;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+.nb-carousel a {
+	height: auto;
+}
+
+.nb-carousel .nb-title {
+	font-weight: bold;
+}
+
 /* POSTS */
 .post {
 	background: white;

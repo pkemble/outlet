@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row h-100 ">
+		<div class="nb-carousel col-sm">
+			<div class="nb-link">
+				<div class="nb-title"><%= link_to 'All', posts_path %></div>
+			</div>
+		</div>
+		<% @notebooks.each do | nb | %>
+		<div class="nb-carousel col-sm">
+			<div class="nb-link">
+				<a href="/?nb=<%= nb.id %>"> 
+					<div class="nb-title"><%= nb.title %></div></br> 
+					<div class="nd-description"><%= nb.description %></div>
+				</a>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
