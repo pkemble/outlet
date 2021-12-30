@@ -66,8 +66,23 @@ body {
 	background: #0f9;
 }
 
+.post-edit {
+	background: #e9ecef;
+	padding: 20px;
+}
+
+.post-edit input, label {
+	display: block;
+	margin-top: 0.5em;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
 trix-editor {
 	height: 350px;
+	overflow-y: auto;
+	background: #fff;
 }
 
 /* HEADER */
