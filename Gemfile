@@ -29,12 +29,14 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
-gem 'devise-two-factor', git: 'https://github.com/jason-hobbs/devise-two-factor.git', branch: 'master' # Rails 6.1 compatibility: https://github.com/tinfoil/devise-two-factor/issues/183
+gem 'devise-two-factor'#, git: 'https://github.com/cybersecuricy/devise-two-factor', branch: 'master' # Rails 7 compatibility: https://github.com/tinfoil/devise-two-factor/issues/192
 gem 'rqrcode'
 gem 'figaro'
 gem 'rss'
 gem 'htmlentities'
 gem 'image_processing', '~> 1.2'
+gem 'simple_form'
+gem 'bootstrap', '~> 5.1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

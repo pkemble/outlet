@@ -1,9 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
-	#require 'rqrcode'
+	require 'rqrcode'
   before_action :one_user_registered?, only: %i[new create]
 
   def edit
-		@qrcode = helpers.qrcode(current_user)
+    if current_user.otp_required_for_login?
+      @qrcode = helpers.qrcode(current_user)
+    else
+      @qrcode = 'foo'
+    end
   end
 
   protected
