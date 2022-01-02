@@ -2,20 +2,36 @@
 <div class="qrcode">
 	<!-- <%= @qrcode %> -->
 </div>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+ 	<%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+    <br />
+<div class="card">
+  <div class="card-header">
+    Two factor authentication
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div class="card-body">
+    <% if current_user.otp_required_for_login %>
+      <p>Two factor authentication is enabled.</p>
+      <p><%= link_to('Disable Two Factor Authentication', two_factor_settings_path, class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure you want to disable two factor authentication?'}) %></p>
+    <% else %>
+      <p>Two factor authentication is NOT enabled.</p>
+      <p><%= link_to('Enable Two Factor Authentication', new_two_factor_settings_path, class: 'btn btn-primary') %></p>
+    <% end %>
+  </div>
+</div>
+<br />
+  <%= f.input :current_password, hint: "(we need your current password to confirm your changes)" %>
+  <%= f.button :submit %>
   
-  <div class="field">
+<!--   <div class="field">
   	<%= f.label :otp_required_for_login %><br />
   	<%= f.check_box :otp_required_for_login %>
   </div>
@@ -23,10 +39,7 @@
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+
   </div>
 
   <div class="field">
@@ -41,7 +54,7 @@
 
   <div class="actions">
     <%= f.submit "Update" %>
-  </div>
+  </div> -->
 <% end %>
 
 <h3>Cancel my account</h3>
